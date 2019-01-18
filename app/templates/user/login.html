@@ -1,0 +1,14 @@
+{% extends 'common/base.html' %}
+
+{% block title %}
+    登录页面
+{% endblock %}
+
+{% block page_content %}
+    <div align="center">
+        {{ wtf.quick_form(form,form_type='horizontal',horizontal_columns=('lg',3,6)) }}
+      <a href="{{ url_for('users.password_request') }}">忘记密码</a>
+        <br>
+        <img  src="{{ url_for('users.getcode') }}" onclick="this.src='{{ url_for('users.getcode') }}?'+ Math.random()">
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyStatementEffectInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="library.main.Login" />
+          <option value="Login" />
+          <option value="test4.排名.wtsql" />
+          <option value="day2.manage.user" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

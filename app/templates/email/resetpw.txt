@@ -1,0 +1,3 @@
+hello {{ username }}
+请点击右边的连接完成密码重置
+{{ url_for('users.reset',token=token,_external=True) }}链接

@@ -1,0 +1,33 @@
+{# 每篇博客只有被点击查看才能评论 #}
+{% from 'common/macro.html' import pagination_show %}
+{% extends 'common/base.html' %}
+
+{% block title %}
+    我的收藏
+{% endblock %}
+
+{% block page_content %}
+    {% for post in posts %}
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="#">
+                    <img class="media-object" src="{{ url_for('static',filename='upload/'+post.blog.user.icon) }}" alt="用户头像">
+                </a>
+            </div>
+            <div class="media-body">
+                <div style="float: right">{{ moment(post.add_time).format('LLLL') }}</div>
+                <h4 class="media-heading">Author: {{ post.blog.user.username }}</h4>
+                {{ post.blog.title }}
+                <br>
+                <a href="{{ url_for('posts.single', _id_=post.blog_id) }}"> ...... </a>
+            </div>
+        </div>
+    {% endfor %}
+    <div align="center">
+        {{ pagination_show(pagination,'users.collect') }}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'common/base.html' %}
+{% from 'common/macro.html' import pagination_show %}
+{% block title %}
+    搜索结果
+{% endblock %}
+
+{% block page_content %}
+    {% for post in posts %}
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="#">
+                    <img class="media-object" src="{{ url_for('static',filename='upload/'+post.user.icon) }}" alt="用户头像">
+                </a>
+            </div>
+            <div class="media-body">
+                <div style="float: right">{{ moment(post.add_time).format('LLLL') }}</div>
+                <h4 class="media-heading">{{ post.user.username }}</h4>
+                {{ post.title }}
+                <br>
+                {{ post.text }}
+            </div>
+        </div>
+    {% endfor %}
+    <div align="center">
+        {{ pagination_show(pagination,'posts.index') }}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    默认标题
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container" align="center">
+            {% block page_content %}
+
+            {% endblock %}
+            <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.index') }}" role="button">回到首页</a></p>
+        </div>
+    </div>
+{% endblock %}
